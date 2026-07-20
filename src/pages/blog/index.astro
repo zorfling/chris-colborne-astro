@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => data.status === 'PUBLISHED')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const fmt = new Intl.DateTimeFormat('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base
+  title="Blog — Chris Colborne"
+  description="Writing about software since 2015 — JavaScript, TypeScript, React, PHP, and whatever else I'm building."
+>
+  <main>
+    <section class="band">
+      <div class="wrap">
+        <p class="kicker">Blog</p>
+        <h1>Writing since 2015</h1>
+        <p style="color: var(--muted); max-width: var(--measure);">
+          Notes from the workshop — JavaScript, TypeScript, React, PHP, and whatever else I've been
+          building.
+        </p>
+        <ul class="post-list">
+          {
+            posts.map((post) => (
+              <li>
+                <span class="date">{fmt.format(post.data.date)}</span>
+                <h3>
+                  <a href={post.data.path}>{post.data.title}</a>
+                </h3>
+                {post.data.description && <p>{post.data.description}</p>}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+</Base>

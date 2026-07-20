@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.status === 'PUBLISHED');
+  return posts.map((post) => ({
+    // Preserve original Gatsby URLs, e.g. /symfony-webpack-encore/
+    params: { slug: post.data.path.replace(/^\/|\/$/g, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = new Intl.DateTimeFormat('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title={`${post.data.title} — Chris Colborne`} description={post.data.description ?? post.data.title}>
+  <main>
+    <article class="post">
+      <div class="wrap">
+        <p class="date">{fmt.format(post.data.date)}</p>
+        <h1>{post.data.title}</h1>
+        <div class="post-body">
+          <Content />
+        </div>
+        <p style="margin-top: 3rem;"><a href="/blog/">← All posts</a></p>
+      </div>
+    </article>
+  </main>
+</Base>

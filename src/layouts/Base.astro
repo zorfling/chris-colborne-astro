@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+export const BOOKING_URL = 'https://calendly.com/chriscolborne';
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="alternate" type="application/rss+xml" title="Chris Colborne" href="/rss.xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@zorfling" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="wordmark" href="/">Chris Colborne</a>
+        <nav class="site-nav" aria-label="Main">
+          <a class="nav-plain" href="/#work">Work</a>
+          <a class="nav-plain" href="/#how">How it works</a>
+          <a class="nav-plain" href="/blog/">Blog</a>
+          <a class="btn" href={BOOKING_URL}>Book a call</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© {new Date().getFullYear()} Chris Colborne · Brisbane, Australia</span>
+        <span>
+          <a href="https://github.com/zorfling">GitHub</a> ·
+          <a href="https://twitter.com/zorfling">Twitter</a> ·
+          <a href="/rss.xml">RSS</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
