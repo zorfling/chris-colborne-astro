@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------
-   chriscolborne.com — design tokens
+   chriscolborne.com - design tokens
    Paper + ink + spruce green, with a single builder-amber accent.
    Display: Bricolage Grotesque · Body: Figtree
 ---------------------------------------------------------------- */
@@ -160,7 +160,9 @@ img {
   border-radius: 999px;
   text-decoration: none;
   border: 2px solid var(--spruce);
-  transition: transform 120ms ease, background 120ms ease;
+  transition:
+    transform 120ms ease,
+    background 120ms ease;
 }
 
 .btn:hover {
