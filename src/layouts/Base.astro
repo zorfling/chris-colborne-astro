@@ -4,9 +4,11 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = '/profile-pic.jpg', type = 'website' } = Astro.props;
 
 export const BOOKING_URL = 'https://calendly.com/chriscolborne';
 ---
@@ -23,9 +25,12 @@ export const BOOKING_URL = 'https://calendly.com/chriscolborne';
     <link rel="alternate" type="application/rss+xml" title="Chris Colborne" href="/rss.xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@zorfling" />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

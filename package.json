@@ -1,20 +1,19 @@
 {
   "name": "chriscolborne-com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Personal site and blog for Chris Colborne - custom web apps, dashboards, and AI tools.",
+  "author": "Chris Colborne",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.1"
-  },
-  "type": "module"
+  }
 }

@@ -8,7 +8,7 @@ const blog = defineCollection({
     path: z.string(),
     date: z.coerce.date(),
     description: z.string().optional(),
-    status: z.string().default('PUBLISHED'),
+    status: z.enum(['PUBLISHED', 'DRAFT']).default('PUBLISHED'),
   }),
 });
 

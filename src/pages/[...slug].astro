@@ -16,7 +16,7 @@ const { Content } = await render(post);
 const fmt = new Intl.DateTimeFormat('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<Base title={`${post.data.title} - Chris Colborne`} description={post.data.description ?? post.data.title}>
+<Base title={`${post.data.title} - Chris Colborne`} description={post.data.description ?? post.data.title} type="article">
   <main>
     <article class="post">
       <div class="wrap">
