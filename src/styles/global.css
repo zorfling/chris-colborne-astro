@@ -136,6 +136,11 @@ img {
   color: var(--spruce);
 }
 
+.site-nav a.btn,
+.site-nav a.btn:hover {
+  color: var(--paper);
+}
+
 @media (max-width: 640px) {
   .site-nav a.nav-plain {
     display: none;
