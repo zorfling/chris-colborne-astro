@@ -9,7 +9,7 @@ description: Over the Christmas break, I decided to write a SharePoint scraper
   information. I've been trialling Atlassian Confluence as a replacement and it
   seems a much better solution.
 status: PUBLISHED
-featuredImage: undraw_sync_files_xb3r.png
+featuredImage: './undraw_sync_files_xb3r.png'
 ---
 
 Over the Christmas break, I decided to write a SharePoint scraper in Python.

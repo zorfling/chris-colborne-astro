@@ -7,7 +7,7 @@ attribution: Illustration from unDraw
 description: Gatsby is an awesome static site generator, but you need to get
   your data from somewhere. What are your options for headless CMSs?
 status: PUBLISHED
-featuredImage: ./featured-image.png
+featuredImage: './featured-image.png'
 ---
 Gatsby is an awesome static site generator, but you need to get your data from somewhere. What are your options for headless CMSs?
 

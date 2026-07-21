@@ -8,7 +8,7 @@ description: Object destructuring is just a way of extracting certain keys
   JavaScript frameworks. In fact you probably already use it. Let's break it
   down bit by bit, so that you can read it like a pro.
 status: PUBLISHED
-featuredImage: undraw_processing_qj6a.png
+featuredImage: './undraw_processing_qj6a.png'
 ---
 
 ## aka what on Earth does `doIt({ x: x2 = getX() } = {})` mean?!

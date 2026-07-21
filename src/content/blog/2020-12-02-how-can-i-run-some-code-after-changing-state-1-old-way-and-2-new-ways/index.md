@@ -6,7 +6,7 @@ attribution: Illustration from Undraw
 description: Running code after changing state is a common desire. Lets look at
   how to do that with hooks.
 status: PUBLISHED
-featuredImage: undraw_connection_b38q.png
+featuredImage: './undraw_connection_b38q.png'
 ---
 Running some code after changing state is a common desire. Let's look at how to do that with hooks.
 

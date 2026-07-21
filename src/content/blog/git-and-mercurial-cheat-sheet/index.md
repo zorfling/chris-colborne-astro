@@ -7,7 +7,7 @@ description: Inspired by the excellent (but very thorough) Mercurial to Git
   Rosetta stone, here is a bare bones, back to basics, KISS mapping between Hg
   and Git.
 status: PUBLISHED
-featuredImage: undraw_contrast_vb82.png
+featuredImage: './undraw_contrast_vb82.png'
 ---
 
 Our team supports a large number of applications, ranging from legacy apps in SVN, to more recent apps in Mercurial, to our latest projects in Git.

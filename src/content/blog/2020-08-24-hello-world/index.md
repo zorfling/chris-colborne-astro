@@ -5,7 +5,7 @@ date: 2015-01-02T08:01:37.053Z
 attribution: Illustration from unDraw
 description: Hi everyone, I'm Chris. I'm a Software Engineer in Brisbane, Australia.
 status: PUBLISHED
-featuredImage: undraw_hello_qnas.png
+featuredImage: './undraw_hello_qnas.png'
 ---
 Hi everyone, I'm Chris. I'm a Software Engineer in Brisbane, Australia.
 

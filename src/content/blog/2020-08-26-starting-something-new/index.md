@@ -6,7 +6,7 @@ attribution: Illustration from unDraw
 description: Over the last month or two, I've started something new. I've
   started a new blog over at https://www.modernjsforphpdevs.com.
 status: PUBLISHED
-featuredImage: undraw_new_entries_nh3h.png
+featuredImage: './undraw_new_entries_nh3h.png'
 ---
 EDIT (2020-09-19): I've folded the posts from Modern JS for PHP Devs back into chriscolborne.com here.
 

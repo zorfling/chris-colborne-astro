@@ -8,7 +8,7 @@ description: So you've built an awesome React powered site. It's shiny, and
   cool, and does everything you need... until your client/boss/best mate's dad
   asks about social sharing meta tags.
 status: PUBLISHED
-featuredImage: ./featured-image.jpg
+featuredImage: './featured-image.jpg'
 ---
 So you've built an awesome React powered site. It's shiny, and cool, and does everything you need... until your client/boss/best mate's dad asks about social sharing meta tags. 'Hey mate, I've heard you can put some tags in and I'll get the cool card when I share my pages on Twitter and Facebook?' Uhhh sure, just chuck them in [React Helmet](https://github.com/nfl/react-helmet) and you'll be sweet right? But hang on, it's not working!
 

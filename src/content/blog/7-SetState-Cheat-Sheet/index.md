@@ -7,7 +7,7 @@ attribution: Photo by Robert Ruggiero on Unsplash
 description: One of the parts of React that trips people up is understanding
   state and how to update it.
 status: PUBLISHED
-featuredImage: ./featured-image.jpg
+featuredImage: './featured-image.jpg'
 ---
 One of the parts of React that trips people up is understanding state and how to update it. A lot of this confusion comes from the fact that setState is asynchronous.
 

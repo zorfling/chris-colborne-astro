@@ -435,6 +435,34 @@ section.band + section.band {
   border-top: 1px solid var(--line);
 }
 
+.post-card {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-thumb {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(36, 66, 47, 0.04);
+}
+
+.post-card-text {
+  min-width: 0;
+}
+
+@media (max-width: 30rem) {
+  .post-thumb {
+    display: none;
+  }
+}
+
 .post-list .date {
   color: var(--muted);
   font-size: 0.9rem;
@@ -465,6 +493,23 @@ article.post .date {
 article.post h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   max-width: 22ch;
+}
+
+.post-hero {
+  margin: 1.8rem 0 0;
+}
+
+.post-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.post-hero figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
 }
 
 article.post .post-body pre {
