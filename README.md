@@ -4,13 +4,13 @@ Freelance lead-gen landing page + ported blog (all 17 posts at their original UR
 
 ## Run locally
 
-    npm install
-    npm run dev
+    yarn install
+    yarn dev
 
 ## Deploy to Netlify
 
 Push this repo to GitHub, then in Netlify: "Add new site → Import from Git".
-`netlify.toml` already sets build command (`npm run build`) and publish dir (`dist`).
+`netlify.toml` already sets build command (`yarn build`) and publish dir (`dist`).
 Point the existing chriscolborne.com site at this repo, or create a new site and
 swap the domain over once you're happy.
 
