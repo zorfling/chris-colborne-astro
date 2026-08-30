@@ -1,10 +1,43 @@
 ---
 import Base, { BOOKING_URL } from '../layouts/Base.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://chriscolborne.com/#person',
+      name: 'Chris Colborne',
+      url: 'https://chriscolborne.com/',
+      image: 'https://chriscolborne.com/profile-pic.jpg',
+      jobTitle: 'Software Engineer',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Brisbane',
+        addressCountry: 'AU',
+      },
+      sameAs: [
+        'https://github.com/zorfling',
+        'https://x.com/zorfling',
+        'https://www.linkedin.com/in/chriscolborne',
+        'https://instagram.com/chris_colborne',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://chriscolborne.com/#website',
+      name: 'Chris Colborne',
+      url: 'https://chriscolborne.com/',
+      publisher: { '@id': 'https://chriscolborne.com/#person' },
+    },
+  ],
+};
 ---
 
 <Base
   title="Chris Colborne - Custom Web Apps, Dashboards & AI Tools | Brisbane"
   description="I build custom software for businesses that have outgrown spreadsheets and off-the-shelf tools. Web apps, dashboards, AI-powered automation. Book a free call."
+  jsonLd={jsonLd}
 >
   <main>
     <section class="hero">

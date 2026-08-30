@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chriscolborne.com/sitemap-index.xml
