@@ -53,6 +53,16 @@ export const BOOKING_URL = 'https://calendly.com/chriscolborne';
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap"
     />
+    <!--
+      is:inline keeps Astro from bundling this as a module — processed scripts
+      lose `defer` and the data-* attributes the tracker reads its config from.
+    -->
+    <script
+      is:inline
+      defer
+      data-website-id="dfid_jTHVbOl3p4o4Ik23a7UaA"
+      data-domain="chriscolborne.com"
+      src="https://datafa.st/js/script.js"></script>
   </head>
   <body>
     <header class="site-header">
