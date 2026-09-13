@@ -38,21 +38,31 @@ export const BOOKING_URL = 'https://calendly.com/chriscolborne';
     <meta property="og:site_name" content="Chris Colborne" />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
-    {
-      publishedTime && (
-        <meta property="article:published_time" content={publishedTime.toISOString()} />
-      )
-    }
+    {publishedTime && (
+      <meta property="article:published_time" content={publishedTime.toISOString()} />
+    )}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@zorfling" />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap"
     />
+    <!--
+      Queues datafast() calls made before the deferred tracker finishes loading;
+      the tracker drains window.datafast.q on init.
+    -->
+    <script is:inline id="datafast-queue">
+      window.datafast =
+        window.datafast ||
+        function () {
+          window.datafast.q = window.datafast.q || [];
+          window.datafast.q.push(arguments);
+        };
+    </script>
     <!--
       is:inline keeps Astro from bundling this as a module — processed scripts
       lose `defer` and the data-* attributes the tracker reads its config from.
@@ -62,17 +72,33 @@ export const BOOKING_URL = 'https://calendly.com/chriscolborne';
       defer
       data-website-id="dfid_jTHVbOl3p4o4Ik23a7UaA"
       data-domain="chriscolborne.com"
-      src="https://datafa.st/js/script.js"></script>
+      src="https://datafa.st/js/script.js"
+    ></script>
   </head>
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="wordmark" href="/">Chris Colborne</a>
+        <a class="wordmark" href="/">
+          Chris Colborne
+        </a>
         <nav class="site-nav" aria-label="Main">
-          <a class="nav-plain" href="/#work">Work</a>
-          <a class="nav-plain" href="/#how">How it works</a>
-          <a class="nav-plain" href="/blog/">Blog</a>
-          <a class="btn" href={BOOKING_URL}>Book a call</a>
+          <a class="nav-plain" href="/#work">
+            Work
+          </a>
+          <a class="nav-plain" href="/#how">
+            How it works
+          </a>
+          <a class="nav-plain" href="/blog/">
+            Blog
+          </a>
+          <a
+            class="btn"
+            href={BOOKING_URL}
+            data-fast-goal="book_call"
+            data-fast-goal-location="header"
+          >
+            Book a call
+          </a>
         </nav>
       </div>
     </header>

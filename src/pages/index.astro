@@ -44,15 +44,30 @@ const jsonLd = {
       <div class="wrap">
         <p class="eyebrow">G'day, I'm Chris 👋</p>
         <h1>
-          I build <span class="thing"><span class="word" id="rotator">your thing</span></span>.
+          I build{' '}
+          <span class="thing">
+            <span class="word" id="rotator">
+              your thing
+            </span>
+          </span>
+          .
         </h1>
         <p class="lede">
           The custom web app you've been meaning to get built. The dashboard that pulls your data
           into one place. The AI tool that does the boring bit for you. Designed around how your
           business actually works - not how some off-the-shelf product thinks it should.
         </p>
-        <a class="btn btn-big" href={BOOKING_URL}>Book a free call</a>
-        <p class="small">Software engineer, 15+ years shipping. Based in Brisbane, work with anyone.</p>
+        <a
+          class="btn btn-big"
+          href={BOOKING_URL}
+          data-fast-goal="book_call"
+          data-fast-goal-location="hero"
+        >
+          Book a free call
+        </a>
+        <p class="small">
+          Software engineer, 15+ years shipping. Based in Brisbane, work with anyone.
+        </p>
       </div>
     </section>
 
@@ -161,11 +176,12 @@ const jsonLd = {
             <p>
               I'm an Aussie software engineer from Brisbane with over 15 years of experience
               building software - from scrappy internal tools to systems used by millions. By day I
-              build video and AI tooling at Microsoft. On the side, I help small
-              businesses get software that actually fits.
+              build video and AI tooling at Microsoft. On the side, I help small businesses get
+              software that actually fits.
             </p>
             <p>
-              I've been writing about software since 2015 - you can dig through the archive on the <a href="/blog/">blog</a>.
+              I've been writing about software since 2015 - you can dig through the archive on the{' '}
+              <a href="/blog/">blog</a>.
             </p>
           </div>
         </div>
@@ -211,7 +227,14 @@ const jsonLd = {
           Thirty minutes, no obligation, no jargon. Worst case, you leave with a clearer idea of
           what you need.
         </p>
-        <a class="btn btn-big" href={BOOKING_URL}>Book a free call</a>
+        <a
+          class="btn btn-big"
+          href={BOOKING_URL}
+          data-fast-goal="book_call"
+          data-fast-goal-location="final_cta"
+        >
+          Book a free call
+        </a>
       </div>
     </section>
   </main>
