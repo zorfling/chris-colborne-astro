@@ -123,6 +123,8 @@ img {
 .site-nav {
   display: flex;
   align-items: center;
+  /* Wrap rather than overflow if the links outgrow a narrow screen. */
+  flex-wrap: wrap;
   gap: 1.4rem;
 }
 
@@ -142,8 +144,17 @@ img {
 }
 
 @media (max-width: 640px) {
-  .site-nav a.nav-plain {
+  /*
+   * Hide in-page anchors only. They point at sections of the homepage, which a
+   * reader can scroll to; a destination like /blog/ has no such fallback, and
+   * hiding it left the blog unreachable from the header on every page.
+   */
+  .site-nav a.nav-plain[href^='/#'] {
     display: none;
+  }
+
+  .site-nav {
+    gap: 1.1rem;
   }
 }
 
@@ -417,6 +428,26 @@ section.band + section.band {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
+}
+
+/*
+ * Footer link rows. The gap sets the spacing on both sides of each separator,
+ * so it can't go lopsided — relying on whitespace around a literal "·" doesn't
+ * survive, because compressHTML strips the newline after it.
+ */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.55rem;
+}
+
+.footer-links a {
+  white-space: nowrap;
+}
+
+.footer-links .sep {
+  color: rgba(247, 246, 242, 0.45);
 }
 
 /* ---- blog ---- */
