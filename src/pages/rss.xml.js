@@ -5,7 +5,8 @@ export async function GET(context) {
   const posts = await getCollection('blog', ({ data }) => data.status === 'PUBLISHED');
   return rss({
     title: 'Chris Colborne',
-    description: 'An Aussie software engineer from Brisbane, building custom software and writing about it.',
+    description:
+      'An Aussie software engineer from Brisbane, building custom software and writing about it.',
     site: context.site,
     items: posts
       .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())

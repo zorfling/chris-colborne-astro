@@ -24,28 +24,26 @@ const fmt = new Intl.DateTimeFormat('en-AU', { year: 'numeric', month: 'long', d
           building.
         </p>
         <ul class="post-list">
-          {
-            posts.map((post) => (
-              <li>
-                <a class="post-card" href={post.data.path}>
-                  {post.data.featuredImage && (
-                    <Image
-                      class="post-thumb"
-                      src={post.data.featuredImage}
-                      alt=""
-                      widths={[160, 320]}
-                      sizes="120px"
-                    />
-                  )}
-                  <span class="post-card-text">
-                    <span class="date">{fmt.format(post.data.date)}</span>
-                    <h3>{post.data.title}</h3>
-                    {post.data.description && <p>{post.data.description}</p>}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
+          {posts.map((post) => (
+            <li>
+              <a class="post-card" href={post.data.path}>
+                {post.data.featuredImage && (
+                  <Image
+                    class="post-thumb"
+                    src={post.data.featuredImage}
+                    alt=""
+                    widths={[160, 320]}
+                    sizes="120px"
+                  />
+                )}
+                <span class="post-card-text">
+                  <span class="date">{fmt.format(post.data.date)}</span>
+                  <h3>{post.data.title}</h3>
+                  {post.data.description && <p>{post.data.description}</p>}
+                </span>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

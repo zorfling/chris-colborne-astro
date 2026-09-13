@@ -47,18 +47,18 @@ const jsonLd = {
       <div class="wrap">
         <p class="date">{fmt.format(post.data.date)}</p>
         <h1>{post.data.title}</h1>
-        {
-          post.data.featuredImage && (
-            <figure class="post-hero">
-              <Image src={post.data.featuredImage} alt={post.data.title} widths={[480, 800, 1200]} />
-              {post.data.attribution && <figcaption>{post.data.attribution}</figcaption>}
-            </figure>
-          )
-        }
+        {post.data.featuredImage && (
+          <figure class="post-hero">
+            <Image src={post.data.featuredImage} alt={post.data.title} widths={[480, 800, 1200]} />
+            {post.data.attribution && <figcaption>{post.data.attribution}</figcaption>}
+          </figure>
+        )}
         <div class="post-body">
           <Content />
         </div>
-        <p style="margin-top: 3rem;"><a href="/blog/">← All posts</a></p>
+        <p style="margin-top: 3rem;">
+          <a href="/blog/">← All posts</a>
+        </p>
       </div>
     </article>
   </main>

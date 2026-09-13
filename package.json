@@ -9,11 +9,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
+    "@datafast/ai-crawl": "^1.0.9",
     "astro": "^7.1.1"
+  },
+  "devDependencies": {
+    "@netlify/edge-functions": "^4.0.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^1.0.0"
   }
 }
